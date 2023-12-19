@@ -1,0 +1,156 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Fredoka One', cursive;
+    /* Playful, cartoonish font */
+    background-color: #FEEBF6;
+    /* Soft pink background for a cute look */
+    color: #444;
+    /* Dark grey text for contrast */
+    overflow: hidden;
+    /* Disable scrolling */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navigation {
+    background-color: #fc9fad;
+    /* Light pink to match the theme */
+    padding: 10px 0;
+    display: flex;
+    /* Use flexbox to align children */
+    justify-content: center;
+    /* Horizontally center the flex items */
+    align-items: center;
+    /* Vertically center the flex items */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2em;
+    transition: color 0.3s;
+    /* Smooth transition for color change */
+}
+
+.navigation a:hover {
+    color: black;
+    /* Text color changes to black on hover */
+}
+
+.container {
+    flex: 1;
+    /* Ensures that the container uses available space, pushing footer down */
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #FF69B4;
+    /* Pink color for the header text */
+    font-size: 2.5em;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 20px 0;
+    overflow: hidden;
+    /* Ensures the circular shape */
+}
+
+.sad-cat-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Makes the image circular */
+    object-fit: cover;
+    /* Ensures the image covers the area without distortion */
+    transition: opacity 0.3s, transform 0.3s;
+    /* Smooth transition for hover effect */
+}
+
+.image-container:hover .sad-cat-image {
+    opacity: 0;
+    /* Hide the original image on hover */
+}
+
+.image-container::after {
+    content: '';
+    /* Initially no content */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('hover.png') center/cover no-repeat;
+    /* Path to the hover image */
+    transition: opacity 0.3s;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.image-container:hover::after {
+    opacity: 1;
+    /* Reveal the hover image on hover */
+}
+
+p {
+    font-size: 1.2em;
+}
+
+button {
+    background-color: #fc9fad;
+    /* Light pink for the button */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    /* Adds a slight shadow for a cartoonish feel */
+    transition: transform 0.2s ease;
+    font-family: 'Fredoka One', cursive;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #fc9fad;
+    /* The footer background color */
+    color: white;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    /* Fixed to the bottom */
+    bottom: 0;
+    /* Stays at the bottom */
+    display: flex;
+    /* Use flexbox to align children */
+    justify-content: center;
+    /* Horizontally center the flex items */
+
+}
+
+footer p {
+    margin: 0;
+    /* Removes the default margin of paragraph for a clean look */
+
+}
